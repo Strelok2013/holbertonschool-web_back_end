@@ -1,0 +1,18 @@
+export default function createReportObject(employeesList) {
+return report = 
+{
+    allEmployees: employeesList,
+    getNumberOfDepartments: (args) => {
+        let i = 0;
+
+        for (const arg in args)
+        {
+            if (arg)
+            {
+                i += 1;
+            }
+        }
+        return i;
+    },
+};
+}
