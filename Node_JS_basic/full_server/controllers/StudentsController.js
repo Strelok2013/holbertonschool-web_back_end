@@ -1,11 +1,11 @@
 const e = require('express')
 const readDatabase = require('../utils')
-const databaseDir = "../database.csv"
 
 class StudentsController
 {
     static getAllStudents(req, res)
     {
+        const databaseDir = process.argv[2];
         readDatabase(databaseDir)
         .then((data) =>
         {
@@ -30,6 +30,7 @@ class StudentsController
 
     static getAllStudentsByMajor(req, res)
     {
+        const databaseDir = process.argv[2];
         const major = req.params.major;
 
         if (major !== 'CS' && major !== 'SWE')
